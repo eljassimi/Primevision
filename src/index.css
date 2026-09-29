@@ -99,6 +99,43 @@
     border-radius: var(--radius-card);
   }
 
+  /* Subtle graph-paper grid for hero (reference-inspired, lime-tinted) */
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(184, 255, 0, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184, 255, 0, 0.055) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: center top;
+    mask-image: radial-gradient(
+      ellipse 85% 75% at 50% 40%,
+      #000 20%,
+      transparent 75%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 85% 75% at 50% 40%,
+      #000 20%,
+      transparent 75%
+    );
+  }
+
+  .hero-grid-fine {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-position: center top;
+    mask-image: radial-gradient(
+      ellipse 70% 60% at 55% 35%,
+      #000 10%,
+      transparent 70%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 70% 60% at 55% 35%,
+      #000 10%,
+      transparent 70%
+    );
+  }
+
   .text-balance {
     text-wrap: balance;
   }

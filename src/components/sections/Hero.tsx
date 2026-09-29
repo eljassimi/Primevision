@@ -22,11 +22,20 @@ export function Hero() {
         <img
           src="/hero-bg.png"
           alt=""
-          className="h-full w-full object-cover object-[center_35%] opacity-[0.22] scale-105"
+          className="h-full w-full scale-105 object-cover object-[center_35%] opacity-[0.18]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/92 to-ink/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(184,255,0,0.08),transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/85" />
+
+        {/* Soft ambient glows that catch the grid */}
+        <div className="absolute -right-24 top-0 h-[28rem] w-[28rem] rounded-full bg-signal/[0.07] blur-3xl" />
+        <div className="absolute -left-20 bottom-0 h-[22rem] w-[22rem] rounded-full bg-signal/[0.05] blur-3xl" />
+
+        {/* Graph-paper grid (coarse + fine) */}
+        <div className="hero-grid absolute inset-0 opacity-90" />
+        <div className="hero-grid-fine absolute inset-0 opacity-70" />
+
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(184,255,0,0.06),transparent_55%)]" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink to-transparent" />
       </div>
 
