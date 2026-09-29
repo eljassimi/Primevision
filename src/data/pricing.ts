@@ -11,7 +11,7 @@ export const pricingPlans: PricingPlan[] = [
     description: 'Für ein Zuhause, einen Bildschirm',
     price: '39 €',
     period: 'Jahr',
-    priceNote: '≈ 4,08 € pro Monat',
+    priceNote: '≈ 3,25 € pro Monat',
     devices: '1 Gerät gleichzeitig',
     quality: 'Full HD',
     features: [
@@ -24,7 +24,7 @@ export const pricingPlans: PricingPlan[] = [
     accent: 'standard',
     whatsappCtaLabel: 'Per WhatsApp bestellen',
     whatsappOrderMessage:
-      'Hallo! Ich möchte den Standard-Plan für 49 € pro Jahr bestellen.',
+      'Hallo! Ich möchte den Standard-Plan für 39 € pro Jahr bestellen.',
   },
   {
     id: 'vip',
@@ -32,7 +32,7 @@ export const pricingPlans: PricingPlan[] = [
     description: 'Zwei Bildschirme, keine Kompromisse',
     price: '59 €',
     period: 'Jahr',
-    priceNote: '≈ 6,58 € pro Monat · +30 € für das doppelte Erlebnis',
+    priceNote: '≈ 4,92 € pro Monat · +20 € für das doppelte Erlebnis',
     devices: '2 Geräte gleichzeitig',
     quality: 'HD & 4K*',
     features: [
@@ -48,7 +48,7 @@ export const pricingPlans: PricingPlan[] = [
     accent: 'vip',
     whatsappCtaLabel: 'Per WhatsApp bestellen',
     whatsappOrderMessage:
-      'Hallo! Ich möchte den VIP Unlimited-Plan für 79 € pro Jahr bestellen.',
+      'Hallo! Ich möchte den VIP Unlimited-Plan für 59 € pro Jahr bestellen.',
   },
 ]
 

@@ -104,8 +104,8 @@ Datei: `src/data/pricing.ts`
 
 - `price`, `period`, `features`, `devices`, `quality` anpassen
 - **WhatsApp-Bestelltext** je Paket in `whatsappOrderMessage` pflegen (enthält Name + Preis), z. B.:
-  - `Hallo! Ich möchte den Standard-Plan für 49 € pro Jahr bestellen.`
-  - `Hallo! Ich möchte den VIP Unlimited-Plan für 79 € pro Jahr bestellen.`
+  - `Hallo! Ich möchte den Standard-Plan für 39 € pro Jahr bestellen.`
+  - `Hallo! Ich möchte den VIP Unlimited-Plan für 59 € pro Jahr bestellen.`
 - Bestellung nur per WhatsApp (keine Kartenzahlung auf der Website)
 - Nach Änderungen: `npm run build`
 
