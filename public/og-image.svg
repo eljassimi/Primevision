@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#050505"/>
+  <circle cx="980" cy="120" r="220" fill="#B8FF00" fill-opacity="0.1"/>
+  <circle cx="160" cy="520" r="180" fill="#B8FF00" fill-opacity="0.06"/>
+  <rect x="72" y="72" width="1056" height="486" rx="32" stroke="#B8FF00" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="120" y="180" width="72" height="72" rx="16" fill="#B8FF00"/>
+  <path d="M144 200v32l28-16-28-16z" fill="#050505"/>
+  <text x="214" y="228" font-family="Outfit, sans-serif" font-size="42" font-weight="700" fill="#FFFFFF">PrimeVision</text>
+  <text x="120" y="340" font-family="Outfit, sans-serif" font-size="58" font-weight="700" fill="#FFFFFF">Premium IPTV</text>
+  <text x="120" y="410" font-family="Outfit, sans-serif" font-size="58" font-weight="700" fill="#B8FF00">f�r Deutschland</text>
+  <text x="120" y="480" font-family="Outfit, sans-serif" font-size="22" fill="#9A9A9A">Klar. Stabil. Fair.</text>
+</svg>

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-price: 'Manrope', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #050505;
+  --color-surface: #0a0a0a;
+  --color-panel: #121212;
+  --color-panel-elevated: #161616;
+  --color-line: #1e1e1e;
+  --color-line-strong: #2a2a2a;
+  --color-mute: #9a9a9a;
+  --color-soft: #d4d4d4;
+  --color-paper: #ffffff;
+  --color-signal: #b8ff00;
+  --color-signal-dim: #6a9900;
+  --color-signal-deep: #3d5c00;
+  --color-warn: #ffc14d;
+
+  --radius-card: 1rem;
+  --radius-btn: 0.75rem;
+  --shadow-glow: 0 0 24px rgba(184, 255, 0, 0.35);
+  --shadow-glow-soft: 0 0 40px rgba(184, 255, 0, 0.18);
+  --shadow-glow-strong: 0 0 32px rgba(184, 255, 0, 0.55), 0 0 64px rgba(184, 255, 0, 0.2);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply m-0 min-h-dvh bg-ink font-sans text-paper antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 70% -10%, rgba(184, 255, 0, 0.06), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 10% 40%, rgba(184, 255, 0, 0.03), transparent 50%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-signal text-ink;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-signal;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-price {
+    font-family: var(--font-price);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+
+  .glow-frame {
+    border: 1px solid rgba(184, 255, 0, 0.45);
+    box-shadow:
+      0 0 0 1px rgba(184, 255, 0, 0.1),
+      var(--shadow-glow-soft);
+  }
+
+  .glow-strong {
+    box-shadow: var(--shadow-glow-strong);
+  }
+
+  .glow-btn {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-surface {
+    @apply border border-line bg-panel;
+    border-radius: var(--radius-card);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.55s ease-out both;
+}
