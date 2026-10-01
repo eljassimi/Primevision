@@ -155,3 +155,30 @@
 .animate-fade-up {
   animation: fade-up 0.55s ease-out both;
 }
+
+/* Hero photo — visible but darkened, slow ken-burns */
+.hero-photo {
+  background-size: cover;
+  background-position: center 22%;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  filter: brightness(0.85) contrast(1.1) saturate(1.08);
+  transform: scale(1.06);
+  animation: hero-drift 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1%, 0.6%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo {
+    animation: none;
+  }
+}
