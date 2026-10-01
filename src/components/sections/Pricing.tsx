@@ -7,7 +7,6 @@ import { getWhatsAppUrl } from '../../config/contact'
 import type { PricingPlan } from '../../types'
 import { Badge } from '../ui/Badge'
 import { Container } from '../ui/Container'
-import { SectionHeading } from '../ui/SectionHeading'
 import { cn } from '../../lib/cn'
 
 function PlanIcon({ accent }: { accent: PricingPlan['accent'] }) {
@@ -62,12 +61,32 @@ function CheckIcon({ accent }: { accent: PricingPlan['accent'] }) {
 
 export function Pricing() {
   return (
-    <section id="pakete" className="py-16 lg:py-24">
-      <Container>
-        <SectionHeading
-          title="Preise & Pakete"
-          description="Zwei klare Jahresabos. Bestellen Sie direkt per WhatsApp – die Nachricht enthält automatisch Ihr Paket und den Preis."
-        />
+    <section
+      id="pakete"
+      className="relative scroll-mt-24 pb-16 pt-4 lg:pb-20 lg:pt-2"
+      aria-labelledby="pricing-heading"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink via-surface/40 to-ink"
+      />
+
+      <Container className="relative z-10">
+        <div className="mb-8 text-center lg:mb-10">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-signal">
+            Angebote
+          </p>
+          <h2
+            id="pricing-heading"
+            className="font-display mt-2 text-2xl font-bold text-paper sm:text-3xl"
+          >
+            Zwei Pakete. Keine versteckten Kosten.
+          </h2>
+          <p className="mx-auto mt-3 max-w-lg text-sm text-mute">
+            Jahresabo wählen und per WhatsApp bestellen – Paket und Preis sind
+            in der Nachricht bereits enthalten.
+          </p>
+        </div>
 
         <ul className="mx-auto grid max-w-4xl list-none grid-cols-1 gap-6 p-0 lg:grid-cols-2 lg:items-stretch">
           {pricingPlans.map((plan) => {
@@ -78,10 +97,10 @@ export function Pricing() {
               <li
                 key={plan.id}
                 className={cn(
-                  'relative flex flex-col rounded-2xl border bg-panel p-6 md:p-8',
+                  'relative flex flex-col rounded-2xl border bg-panel/95 p-6 backdrop-blur-sm md:p-8',
                   isVip
                     ? 'border-[#d4a017]/70 shadow-[0_0_36px_rgba(212,160,23,0.22)]'
-                    : 'border-line',
+                    : 'border-line shadow-[0_12px_40px_rgba(0,0,0,0.35)]',
                 )}
               >
                 {plan.badge ? (

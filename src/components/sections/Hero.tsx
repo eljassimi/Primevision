@@ -7,67 +7,61 @@ const trustPoints = [
   'HD & 4K Qualität',
   'Schnelle Aktivierung',
   'Deutscher Support',
-  'Flexible Pakete',
+  'Flexible Jahresabos',
 ]
 
 export function Hero() {
   return (
     <section
       id="start"
-      className="relative overflow-hidden pb-16 pt-10 lg:pb-24 lg:pt-16"
+      className="relative overflow-hidden pb-6 pt-8 lg:pb-8 lg:pt-12"
       aria-labelledby="hero-heading"
     >
-      {/* Atmospheric background from lifestyle photo */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <img
           src="/hero-bg.png"
           alt=""
-          className="h-full w-full scale-105 object-cover object-[center_35%] opacity-[0.18]"
+          className="h-full w-full scale-105 object-cover object-[center_35%] opacity-[0.16]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/92 to-ink/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-transparent to-ink" />
 
-        {/* Soft ambient glows that catch the grid */}
-        <div className="absolute -right-24 top-0 h-[28rem] w-[28rem] rounded-full bg-signal/[0.07] blur-3xl" />
-        <div className="absolute -left-20 bottom-0 h-[22rem] w-[22rem] rounded-full bg-signal/[0.05] blur-3xl" />
+        <div className="absolute -right-24 top-0 h-[22rem] w-[22rem] rounded-full bg-signal/[0.07] blur-3xl" />
+        <div className="absolute -left-16 bottom-0 h-[16rem] w-[16rem] rounded-full bg-signal/[0.04] blur-3xl" />
 
-        {/* Graph-paper grid (coarse + fine) */}
         <div className="hero-grid absolute inset-0 opacity-90" />
-        <div className="hero-grid-fine absolute inset-0 opacity-70" />
-
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(184,255,0,0.06),transparent_55%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink to-transparent" />
+        <div className="hero-grid-fine absolute inset-0 opacity-60" />
       </div>
 
-      <Container className="relative z-10 grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
-        <div className="animate-fade-up lg:col-span-6">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-signal">
+      <Container className="relative z-10">
+        <div className="mx-auto max-w-3xl animate-fade-up text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-signal">
             Premium Streaming · Deutschland
           </p>
           <h1
             id="hero-heading"
-            className="font-display text-balance text-4xl font-bold leading-[1.08] tracking-tight text-paper sm:text-5xl lg:text-[3.25rem]"
+            className="font-display text-balance text-3xl font-bold leading-[1.1] tracking-tight text-paper sm:text-4xl lg:text-[2.75rem]"
           >
-            Fernsehen in neuer Qualität.
+            Wählen Sie Ihr Paket.
             <span className="mt-1 block text-signal">
-              Einfach. Stabil. PrimeVision.
+              Klar. Stabil. Fair.
             </span>
           </h1>
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-mute">
-            {BRAND.name} bringt Live-TV und Streaming auf Ihre Geräte – mit
-            klaren Paketen, schneller Freischaltung und Support auf Deutsch.
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-mute sm:text-base">
+            {BRAND.name} – Live-TV und Streaming mit schneller Freischaltung
+            und Support auf Deutsch. Zwei Jahresabos, Bestellung per WhatsApp.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href={CTA_CONFIG.order.href} size="lg">
-              Jetzt starten
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="#pakete" size="lg">
+              Pakete ansehen
             </Button>
             <Button href={CTA_CONFIG.trial.href} variant="secondary" size="lg">
               {CTA_CONFIG.trial.label}
             </Button>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2">
+          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             {trustPoints.map((point) => (
               <li
                 key={point}
@@ -85,52 +79,29 @@ export function Hero() {
           </ul>
         </div>
 
+        {/* Subtle lifestyle strip – secondary to offers */}
         <div
-          className="animate-fade-up lg:col-span-6"
-          style={{ animationDelay: '100ms' }}
+          className="relative mx-auto mt-10 hidden max-w-4xl animate-fade-up overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:block"
+          style={{ animationDelay: '80ms' }}
         >
-          <HeroImage />
+          <img
+            src="/hero-main.png"
+            alt={`${BRAND.name} – Streaming-Erlebnis zu Hause`}
+            width={688}
+            height={400}
+            className="h-40 w-full object-cover object-[center_30%] opacity-90 lg:h-48"
+            loading="eager"
+            decoding="async"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"
+          />
+          <p className="absolute bottom-3 left-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-soft">
+            Home Cinema · HD & 4K
+          </p>
         </div>
       </Container>
     </section>
-  )
-}
-
-function HeroImage() {
-  return (
-    <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-signal/15 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-6 left-1/2 h-16 w-3/4 -translate-x-1/2 rounded-full bg-black/70 blur-2xl"
-      />
-
-      <figure className="relative overflow-hidden rounded-2xl border border-white/10 bg-panel shadow-[0_24px_80px_rgba(0,0,0,0.65),0_0_40px_rgba(184,255,0,0.12)]">
-        <img
-          src="/hero-main.png"
-          alt={`${BRAND.name} – Streaming-Erlebnis zu Hause`}
-          width={688}
-          height={1024}
-          className="aspect-[4/5] w-full object-cover object-center sm:aspect-[5/6] lg:aspect-[4/5]"
-          loading="eager"
-          decoding="async"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"
-        />
-        <figcaption className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
-          <span className="rounded-full border border-white/15 bg-ink/65 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-soft backdrop-blur-md">
-            Home Cinema
-          </span>
-          <span className="rounded-full border border-signal/35 bg-signal/15 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-signal backdrop-blur-md">
-            HD · 4K
-          </span>
-        </figcaption>
-      </figure>
-    </div>
   )
 }

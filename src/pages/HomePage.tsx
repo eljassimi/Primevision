@@ -15,11 +15,11 @@ export function HomePage() {
   return (
     <>
       <Hero />
+      <Pricing />
       <TrustBar />
       <HowItWorks />
       <Features />
       <Devices />
-      <Pricing />
       <Testimonials />
       <FAQ />
       <CTA />
