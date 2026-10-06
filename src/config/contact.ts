@@ -3,9 +3,9 @@
  */
 export const CONTACT_CONFIG = {
   email: 'kontakt@beispiel.de',
-  phoneDisplay: '+49 XXX XXXXXXX',
-  phoneHref: 'tel:+49XXXXXXXXXXX',
-  whatsappNumber: '491701234567',
+  phoneDisplay: '0648098083',
+  phoneHref: 'tel:+212648098083',
+  whatsappNumber: '212648098083',
   whatsappMessage:
     'Hallo PrimeVision, ich interessiere mich für einen kostenlosen Test.',
   supportHours: 'Support auf Deutsch, werktags und am Wochenende',
